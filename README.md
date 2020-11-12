@@ -6,7 +6,9 @@
 
 ### Improvements needed
   * Random maze generator's algorythm is not perfect
-  * Optimise pathfinding's algorythms : - use chained list for open cases
-                                        - use boolean for closed/visited cases
-  
+  * Optimise pathfinding's algorythms :  
+  <pre>
+      use chained list for open cases
+      use boolean for closed/visited cases
+  </pre>
 
