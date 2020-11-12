@@ -31,7 +31,7 @@ class main():
 
         pathOptions = ("Dijkstra","A*","BFS","DFS") 
         self.pathOption .set(pathOptions[0])
-        self.pathOptions = tk.OptionMenu(self.canBt, self.pathOption , *pathOptions, command = self.changeCase)
+        self.pathOptions = tk.OptionMenu(self.canBt, self.pathOption , *pathOptions, command = self.changePath)
         self.pathOptions.pack(side=tk.RIGHT, anchor = tk.CENTER)
 
         self.mazeControl[0] = tk.Button(self.canBt, text='random maze', command = lambda gui = self: randomMaze.Generate(self.guiGrid))
@@ -41,7 +41,7 @@ class main():
         self.canBt.pack()#side=tk.LEFT
 
 
-    def changeCase(self, Q):
+    def changePath(self, Q):
         self.pathOptions.config(state="disable")
         self.guiGrid.paintGrid()
         opt = self.pathOption.get()
@@ -65,11 +65,12 @@ class main():
         i=event.y//self.guiGrid.sizeCase
         opt = self.caseOption.get()
         if (opt == "Void"):
+            self.guiGrid.grid[i][j] = 0
             self.guiGrid.colorCase(j,i,'white') 
 
         elif (opt == "Wall"):
             self.guiGrid.grid[i][j] = -1
-            self.guiGrid.colorCase(i,j,'dimgray')
+            self.guiGrid.colorCase(j,i,'dimgray')
 
         elif (opt == "Start"):
             if self.guiGrid.start:

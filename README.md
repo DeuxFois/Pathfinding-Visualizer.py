@@ -5,7 +5,8 @@
 * `python main.py`
 
 ### Improvements needed
-  * stop calculating the older path when a newer is asked
-  * better Random Maze - the algorythme is pretty broken
-  * don't destroy start or end cell's tab when the random maze in generating
+  * Random maze generator's algorythm is not perfect
+  * Optimise pathfinding's algorythms : - use chained list for open cases
+                                        - use boolean for closed/visited cases
+  
 

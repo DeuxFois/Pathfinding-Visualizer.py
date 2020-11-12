@@ -41,7 +41,7 @@ class Gui():
 
     def paintPath(self, path):
                 for pos in path:
-                    self.colorCase(pos[0],pos[1],'limegreen')
+                    self.colorCase(*(pos),'limegreen')
                     self.win.after(1,self.win.update())  
     
     def isInsideGrid(self, y, x):
